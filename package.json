@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "This project expands on the original Express.js exercise by introducing a custom 404 page styled directly from the backend. Instead of a plain text response, the server now dynamically serves an HTML page with inline CSS and structured content.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
