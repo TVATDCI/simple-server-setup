@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/TVATDCI/simple-server-setup/issues"
   },
-  "homepage": "https://github.com/TVATDCI/simple-server-setup#readme"
+  "homepage": "https://github.com/TVATDCI/simple-server-setup#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
