@@ -61,3 +61,43 @@ app.get("/fact", (req, res) => {
   const randomFact = facts[Math.floor(Math.random() * facts.length)];
   res.send(randomFact);
 });
+
+// Create an Enhance 404 page with custom html headers!
+
+app.use((req, res) => {
+  res.writeHead(404, {
+    "Content-Type": "text/html",
+    "My-Own-html-header": "Hello, This is a custom 404 header from the server!",
+  });
+  res.end(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>404 - Not Found</title>
+        <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #023430; }
+            h1 { color: #dc3545; }
+            p { font-size: 18px; color: #FFFFFF; }
+            h4 { color: #FFEEA9 }
+            ul { list-style: none; padding: 0; }
+            li { margin: 10px 0; color: #00ED64; }
+            a { text-decoration: none; color: #fcd8fc; font-weight: bold; }
+            a:hover { text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+        <h1>Oops! 404 - Page Not Found</h1>
+        <p>The server is running on port <strong>3000</strong>, but what you have entered is not a valid route 🙈</p>
+        <h4>Try these available routes instead:</h4>
+        <ul>
+            <li> <a href="/hello"> /hello</a> - Responds with a greeting.</li>
+            <li><a href="/time"> /time</a> - Returns the current date and time.</li>
+            <li><a href="/random"> /random</a> - Generates a random number.</li>
+            <li><a href="/fact"> /fact</a> - Shares a random fact.</li>
+        </ul>
+    </body>
+    </html>
+  `);
+});
