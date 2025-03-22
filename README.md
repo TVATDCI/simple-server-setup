@@ -29,14 +29,24 @@ import express from "express";
 
 const app = express();
 
-app.listen(3001, () => {
-  console.log("The server is listening on port 3001... 🐒");
+app.listen(3000, () => {
+  console.log("The server is listening on port 3000... 🐒");
 });
 ```
 
 ---
 
 ### Implementing Endpoints
+
+#### **GET `/api`**
+
+Responds with a greeting message.
+
+```js
+app.get("/api", (req, res) => {
+  res.send("Hello from the API side...🐒");
+});
+```
 
 #### **GET `/hello`**
 
