@@ -48,13 +48,23 @@ app.get("/api", (req, res) => {
 });
 ```
 
-#### **GET `/api`**
+#### **GET `/api/users`**
 
 Responds with a greeting message from /api/users URL.
 
 ```js
 app.get("/api/users", (req, res) => {
   res.send("Hello from the API users side...🐒");
+});
+```
+
+#### **GET `/api/users/:id`**
+
+Responds with a greeting message from /api/users URL.
+
+```js
+app.get("/api/users/:id", (req, res) => {
+  res.send(`Hello from the API user ${req.params.id} side...🐒")
 });
 ```
 
