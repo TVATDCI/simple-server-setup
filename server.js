@@ -38,8 +38,26 @@ app.get("/time", (req, res) => {
   res.send(`The current date and time is ${dateAndTime}`);
 });
 
-// Create a route (GET) /random endpoint
-app.get("/random", (req, res) => {
+// Create a route (GET) /random/:num endpoint
+app.get("/random/:num", (req, res) => {
   const randomNum = Math.floor(Math.random() * 100);
   res.send(`Random number: ${randomNum}`);
+});
+
+// Create a route (GET) /fact endpoint
+app.get("/fact", (req, res) => {
+  const facts = [
+    "The first oranges weren’t orange",
+    "The shortest war in history lasted 38 minutes",
+    "The world wastes about 1 billion metric tons of food each year",
+    "The unicorn is the national animal of Scotland",
+    "Java is not the same as JavaScript",
+    "JavaScript was created in about 10 days",
+    "The first computer virus was created in 1983",
+    "The first webcam watched a coffee pot",
+    "The first domain name ever registered was Symbolics.com",
+    "The first ever email was sent in 1971",
+  ];
+  const randomFact = facts[Math.floor(Math.random() * facts.length)];
+  res.send(randomFact);
 });
