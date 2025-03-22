@@ -26,3 +26,8 @@ app.get("/api/users", (req, res) => {
 app.get("/api/users/:id", (req, res) => {
   res.send(`Hello from the API user ${req.params.id} side...🐒"`);
 });
+
+// Create a route (GET) /hello endpoint
+app.get("/hello", (req, res) => {
+  res.send("Hello, I am the Hello endpoint");
+});
