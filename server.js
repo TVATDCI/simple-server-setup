@@ -31,3 +31,9 @@ app.get("/api/users/:id", (req, res) => {
 app.get("/hello", (req, res) => {
   res.send("Hello, I am the Hello endpoint");
 });
+
+// Create a route (GET) /time endpoint
+app.get("/time", (req, res) => {
+  const dateAndTime = new Date().toLocaleString();
+  res.send(`The current date and time is ${dateAndTime}`);
+});
