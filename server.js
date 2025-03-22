@@ -92,9 +92,13 @@ app.use((req, res) => {
         <p>The server is running on port <strong>3000</strong>, but what you have entered is not a valid route 🙈</p>
         <h4>Try these available routes instead:</h4>
         <ul>
+            <li> <a href="/"> /</a> - Back to root URL. </li>
+            <li> <a href="/api"> /api</a> - API URL. </li>
+            <li> <a href="/api/users"> /api/users</a> - API Users URL.</li>
+            <li> <a href="/api/users/:id"> /api/users/:id</a> - API User by ID.</li>
             <li> <a href="/hello"> /hello</a> - Responds with a greeting.</li>
             <li><a href="/time"> /time</a> - Returns the current date and time.</li>
-            <li><a href="/random"> /random</a> - Generates a random number.</li>
+            <li><a href="/random/:num"> /random/:num</a> - Generates a random number.</li>
             <li><a href="/fact"> /fact</a> - Shares a random fact.</li>
         </ul>
     </body>
