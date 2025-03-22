@@ -37,3 +37,9 @@ app.get("/time", (req, res) => {
   const dateAndTime = new Date().toLocaleString();
   res.send(`The current date and time is ${dateAndTime}`);
 });
+
+// Create a route (GET) /random endpoint
+app.get("/random", (req, res) => {
+  const randomNum = Math.floor(Math.random() * 100);
+  res.send(`Random number: ${randomNum}`);
+});
