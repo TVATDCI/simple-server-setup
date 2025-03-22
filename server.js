@@ -16,3 +16,13 @@ app.get("/", (req, res) => {
 app.get("/api", (req, res) => {
   res.send("Hello from the API side...🐒");
 });
+
+// Create a route (GET) to the /api/users URL
+app.get("/api/users", (req, res) => {
+  res.send("Hello from the API users side...🐒");
+});
+
+// Create a route (GET) to the /api/users/:id URL
+app.get("/api/users/:id", (req, res) => {
+  res.send(`Hello from the API user ${req.params.id} side...🐒"`);
+});
