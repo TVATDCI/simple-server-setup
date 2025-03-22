@@ -40,11 +40,21 @@ app.listen(3000, () => {
 
 #### **GET `/api`**
 
-Responds with a greeting message.
+Responds with a greeting message from /api URL.
 
 ```js
 app.get("/api", (req, res) => {
   res.send("Hello from the API side...🐒");
+});
+```
+
+#### **GET `/api`**
+
+Responds with a greeting message from /api/users URL.
+
+```js
+app.get("/api/users", (req, res) => {
+  res.send("Hello from the API users side...🐒");
 });
 ```
 
