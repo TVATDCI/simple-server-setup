@@ -8,8 +8,48 @@ app.listen(3000, () => {
 });
 
 // Create a route (GET) to the root URL
+// Modification respond with a welcome message and a list of available routes
 app.get("/", (req, res) => {
-  res.send("Hello from the server side...🐒");
+  res.writeHead(200, {
+    "Content-Type": "text/html",
+    "Custom-Header": "Welcome to the Express Server",
+  });
+
+  res.end(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to the API</title>
+        <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #023430; }
+            h1 { color: #00ED64; }
+            p { font-size: 18px; color: #FFFFFF; }
+            h4 { color: #FFEEA9 }
+            ul { list-style: none; padding: 0; }
+            li { margin: 10px 0; color: #00ED64; }
+            a { text-decoration: none; color: #fcd8fc; font-weight: bold; }
+            a:hover { text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to My Express API 🔥</h1>
+        <p>Click on any route below to explore:</p>
+        <h4>Available Routes:</h4>
+        <ul>
+            <li> <a href="/"> /</a> - This page (home).</li>
+            <li> <a href="/api"> /api</a> - API main endpoint. </li>
+            <li> <a href="/api/users"> /api/users</a> - API Users endpoint.</li>
+            <li> <a href="/api/users/1"> /api/users/:id</a> - Get a user by ID (try changing '1').</li>
+            <li> <a href="/hello"> /hello</a> - A friendly greeting.</li>
+            <li> <a href="/time"> /time</a> - Get the current date and time.</li>
+            <li> <a href="/random/100"> /random/:num</a> - Get a random number.</li>
+            <li> <a href="/fact"> /fact</a> - Get a random fun fact.</li>
+        </ul>
+    </body>
+    </html>
+  `);
 });
 
 // Create a route (GET) to the /api URL
