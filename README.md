@@ -160,7 +160,7 @@ app.use((req, res) => {
         <ul>
             <li> <a href="/hello"> /hello</a> - Responds with a greeting.</li>
             <li><a href="/time"> /time</a> - Returns the current date and time.</li>
-            <li><a href="/random"> /random</a> - Generates a random number.</li>
+            <li><a href="/random/:num"> /random/:num</a> - Generates a random number.</li>
             <li><a href="/fact"> /fact</a> - Shares a random fact.</li>
         </ul>
     </body>
